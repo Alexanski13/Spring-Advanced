@@ -24,6 +24,9 @@ public class UserEntity {
   @Column(nullable = false)
   private String firstName;
   private String lastName;
+
+  private String country;
+
   @Column(nullable = false)
   private String password;
 
@@ -89,15 +92,25 @@ public class UserEntity {
     return this;
   }
 
+  public String getCountry() {
+    return country;
+  }
+
+  public UserEntity setCountry(String country) {
+    this.country = country;
+    return this;
+  }
+
   @Override
   public String toString() {
     return "UserEntity{" +
-        "id=" + id +
-        ", email='" + email + '\'' +
-        ", firstName='" + firstName + '\'' +
-        ", lastName='" + lastName + '\'' +
-        ", password='" + password + '\'' +
-        ", roles=" + roles +
-        '}';
+            "id=" + id +
+            ", email='" + email + '\'' +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", country='" + country + '\'' +
+            ", password='" + (password != null ? "[PROVIDED]" : "[N/A]") + '\'' +
+            ", roles=" + roles +
+            '}';
   }
 }
